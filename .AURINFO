@@ -1,0 +1,36 @@
+pkgbase = linux-eee-ck
+	pkgver = 4.0.5
+	pkgrel = 1
+	url = http://www.kernel.org
+	arch = i686
+	license = GPL2
+	makedepends = kmod
+	makedepends = inetutils
+	makedepends = bc
+	source = http://www.kernel.org/pub/linux/kernel/v4.x/linux-4.0.tar.xz
+	source = http://www.kernel.org/pub/linux/kernel/v4.x/patch-4.0.5.xz
+	source = http://ck.kolivas.org/patches/4.0/4.0/4.0-ck1/patch-4.0-ck1.bz2
+	source = http://ck.kolivas.org/patches/bfs/4.0/4.0/pending/bfs462-rtmn-fix.patch
+	source = http://ck.kolivas.org/patches/bfs/4.0/4.0/pending/bfs462-update_inittask.patch
+	source = bfs462-nosubmit.patch
+	source = change-default-console-loglevel.patch
+	source = 61-eee-ssd.rules
+	source = kernelconfig
+	options = !strip
+
+pkgname = linux-eee-ck
+	pkgdesc = Linux Kernel and modules for the Asus Eee PC 701, with Brain Fuck Scheduler v0.462
+	install = linux-eee-ck.install
+	depends = coreutils
+	depends = module-init-tools
+	optdepends = crda: for wireless regulatory domain support
+	optdepends = iw: for wireless configuration support
+	provides = linux-eee-ck=4.0.5
+	replaces = linux-uvc-eee-svn
+	replaces = madwifi-eee-svn
+
+pkgname = linux-eee-ck-headers
+	pkgdesc = Header files and scripts to build modules for linux-eee-ck.
+	depends = linux-eee-ck
+	replaces = kernel26-ck-headers
+
